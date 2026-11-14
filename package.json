@@ -1,0 +1,13 @@
+{
+  "name": "cobranca-bot",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "up": "docker compose --env-file .env -f infra/compose.dev.yml up -d",
+    "down": "docker compose --env-file .env -f infra/compose.dev.yml down",
+    "dev": "npm run dev -w apps/web",
+    "test": "npm run test -w packages/core",
+    "db:generate": "npm run generate -w packages/db",
+    "db:migrate": "npm run migrate -w packages/db"
+  }
+}
